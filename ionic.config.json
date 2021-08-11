@@ -1,5 +1,7 @@
 {
   "name": "biuldLolApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
