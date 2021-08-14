@@ -1,33 +1,29 @@
-import { IBuild } from './../models/IBuild.model';
-import { DadosService } from './../services/dados.service';
-import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
-import { ToastController } from '@ionic/angular';
-
+import { AlertController, ToastController } from '@ionic/angular';
+import { IBuilds } from './../../models/IBuild.model';
+import { DadosService } from './../../services/dados.service';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss'],
+  selector: 'app-adc',
+  templateUrl: './adc.page.html',
+  styleUrls: ['./adc.page.scss'],
 })
-export class Tab1Page {
-  titulo = 'Build App';
-  listaBuildMenu: IBuild[] = [
+export class AdcPage implements OnInit {
+  listaBuild: IBuilds[] = [
     {
       tipoBuild: 'ADC',
-      imagem:
-        'https://i.pinimg.com/originals/f4/03/48/f403486ef41dd09e28032b51713127b4.jpg',
-      pagina: '/adc',
+      nome: 'Jhin',
+      imagem: 'https://i.ytimg.com/vi/K2rzzqeE4CA/maxresdefault.jpg',
+      discrucao: 'Jhin é um meticuloso psicopata criminoso que acredita que o assassinato é uma arte...'
     },
     {
-      tipoBuild: 'MID',
-      imagem:
-        'https://i.pinimg.com/564x/52/1e/dc/521edc2b335a2f8de2860014d4dc6767.jpg',
-      pagina: '/mid',
+      tipoBuild: 'ADC',
+      nome: 'Xayah',
+      imagem: 'https://i.pinimg.com/280x280_RS/67/02/63/670263427942603963cffbedbe996cc6.jpg',
+      discrucao: 'Mortal e precisa, Xayah é uma vastaya revolucionária que trava sua própria batalha para salvar seu povo...'
     },
   ];
-
 
   constructor(
     public alertController: AlertController,
@@ -35,13 +31,13 @@ export class Tab1Page {
     public dadosService: DadosService,
     public route: Router
   ) {}
-
-  exibirBuild(build: IBuild) {
+  exibirBuilds(build: IBuilds) {
     this.dadosService.guardarDados('build', build);
     this.route.navigateByUrl('/dados-builds');
   }
-  //o metodo apresentar Toast informa uma mensagem(rapida) para o usuario( otimo para usar em confirmação//
-  //é preciso adicionar o metodo a onde queremos que precisa alertar, no caso foi adicionado comando: handler //
+
+  ngOnInit() {}
+
   async apresentarToast() {
     const toast = await this.toastController.create({
       message: 'Build adicionado aos favoritos...',

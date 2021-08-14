@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>build ADC</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-card *ngIf="build">
+    <ion-card-header>
+      <img [src]="build.imagem" />
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{build.discrucao}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
