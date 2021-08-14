@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="dark">
     <ion-title>
-      <img src="https://lolstatic-a.akamaihd.net/frontpage/apps/prod/harbinger-l10-website/pt-br/production/pt-br/static/logo-800-47024e2aeaaa8651c172ba883264dd43.png" alt="">
+      {{titulo}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -22,7 +22,7 @@
       </ion-label >
     </ion-item>
     <ion-item-options side="end">
-      <ion-item-option >
+      <ion-item-option color= "laranja"(click)= "exibirAlertaFavorito()">
         <ion-icon slot="icon-only" name="star"></ion-icon>
       </ion-item-option>
     </ion-item-options>
@@ -41,7 +41,7 @@
       </ion-label >
     </ion-item>
     <ion-item-options side="end">
-      <ion-item-option >
+      <ion-item-option color = "laranja" (click)= "exibirAlertaFavorito()">
         <ion-icon slot="icon-only" name="star"></ion-icon>
       </ion-item-option>
     </ion-item-options>
